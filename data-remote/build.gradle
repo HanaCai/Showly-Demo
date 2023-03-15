@@ -1,0 +1,73 @@
+apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-android-extensions"
+apply plugin: "kotlin-kapt"
+apply plugin: 'dagger.hilt.android.plugin'
+apply from: '../versions.gradle'
+
+android {
+  kotlinOptions { jvmTarget = "1.8" }
+  compileOptions {
+    coreLibraryDesugaringEnabled true
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+  compileSdkVersion versions.compileSdk
+
+  buildFeatures {
+    buildConfig = true
+  }
+
+  defaultConfig {
+    minSdkVersion versions.minSdk
+    targetSdkVersion versions.targetSdk
+    compileSdkVersion versions.compileSdk
+
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    consumerProguardFiles "consumer-rules.pro"
+  }
+
+  buildTypes.all {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+    buildConfigField("String", "TRAKT_CLIENT_ID", properties.getProperty("traktClientId"))
+    buildConfigField("String", "TRAKT_CLIENT_SECRET", properties.getProperty("traktClientSecret"))
+    buildConfigField("String", "TMDB_API_KEY", properties.getProperty("tmdbApiKey"))
+    buildConfigField("String", "OMDB_API_KEY", properties.getProperty("omdbApiKey"))
+    buildConfigField("String", "REDDIT_CLIENT_ID", properties.getProperty("redditClientId"))
+    buildConfigField 'String', 'VER_NAME', "\"${versions.versionName}\""
+  }
+
+  buildTypes {
+    debug {
+      minifyEnabled false
+    }
+
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+    }
+  }
+
+  namespace 'com.michaldrabik.data_remote'
+}
+
+dependencies {
+  api libs.retrofit
+  api libs.retrofit.moshi
+  api libs.loggingInterceptor
+
+  implementation libs.kotlin.coroutines
+  implementation libs.timber
+  implementation libs.firebase.crashlytics
+  implementation libs.firebase.analytics
+
+  implementation libs.hilt.android
+  kapt libs.hilt.compiler
+
+  testImplementation testLibs.junit
+
+  coreLibraryDesugaring libs.android.desugar
+}

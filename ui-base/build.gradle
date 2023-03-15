@@ -1,0 +1,76 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+apply from: '../versions.gradle'
+
+android {
+  kotlinOptions { jvmTarget = "1.8" }
+
+  compileOptions {
+    coreLibraryDesugaringEnabled true
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+  buildFeatures {
+    viewBinding true
+  }
+
+  compileSdkVersion versions.compileSdk
+
+  defaultConfig {
+    minSdkVersion versions.minSdk
+    targetSdkVersion versions.targetSdk
+    compileSdkVersion versions.compileSdk
+
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+    }
+  }
+
+  namespace 'com.michaldrabik.ui_base'
+}
+
+dependencies {
+  implementation project(':common')
+  implementation project(':data-remote')
+  implementation project(':data-local')
+  implementation project(':ui-model')
+  implementation project(':ui-navigation')
+  implementation project(':repository')
+
+  api libs.kotlin.coroutines
+
+  api libs.android.appCompat
+  api libs.android.core
+  api libs.bundles.lifecycle
+  api libs.bundles.navigation
+  api libs.android.fragment
+  api libs.android.recycler
+  api libs.android.constraintLayout
+  api libs.android.swipeRefresh
+  api libs.android.work
+  api libs.android.material
+  api libs.android.dynamicAnimation
+  api libs.overscrollDecor
+  api libs.timber
+
+  api libs.bundles.firebase
+
+  api libs.glide
+  kapt libs.glide.compiler
+
+  implementation libs.hilt.android
+  kapt libs.hilt.compiler
+
+  implementation libs.hilt.work
+  kapt libs.hilt.work.compiler
+
+  coreLibraryDesugaring libs.android.desugar
+}

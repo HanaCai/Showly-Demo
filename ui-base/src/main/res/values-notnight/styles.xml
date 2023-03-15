@@ -1,0 +1,94 @@
+<resources>
+
+  <!-- Base app theme -->
+  <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+    <item name="android:windowBackground">@color/colorBackground</item>
+    <item name="android:navigationBarColor">@color/colorBlack</item>
+    <item name="android:windowTranslucentStatus">true</item>
+    <item name="toolbarNavigationButtonStyle">@style/Toolbar.Button.Navigation.Tinted</item>
+    <item name="switchStyle">@style/ShowlySwitch</item>
+
+    <item name="colorPrimary">@color/colorWhite</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+
+    <item name="android:textColorPrimary">@color/colorBlue</item>
+    <item name="android:textColorSecondary">@color/colorBlueLight</item>
+    <item name="textColorOnSurface">@color/colorWhite</item>
+    <item name="textColorGridTitle">@color/colorBlue</item>
+    <item name="textColorTab">@color/colorBlueLight2x</item>
+    <item name="textColorTabSelected">@color/colorBlue</item>
+    <item name="textColorChip">?android:textColorPrimary</item>
+    <item name="textColorChipSelected">?android:textColorPrimary</item>
+    <item name="colorBackgroundChipSelected">#D9E2EC</item>
+    <item name="colorBackgroundChipSelectedLight">#D9E2EC</item>
+    <item name="colorProgressTrack">#D3D3D3</item>
+
+    <item name="colorInfoSnackbar">@color/colorAccent</item>
+    <item name="textColorInfoSnackbar">@color/colorWhite</item>
+    <item name="colorErrorSnackbar">@color/colorError</item>
+    <item name="textColorErrorSnackbar">@color/colorWhite</item>
+
+    <item name="colorBottomMenuBackground">@color/colorPrimary</item>
+    <item name="colorBottomMenuItem">@color/colorBlueLight2x</item>
+    <item name="colorBottomMenuItemChecked">@color/colorBlue</item>
+    <item name="colorBottomMenuSeparator">@color/colorPrimaryDark</item>
+    <item name="colorBottomMenuIndicator">@color/colorPrimaryDark</item>
+
+    <item name="colorSearchViewBackground">@color/colorWhite</item>
+    <item name="colorSearchViewControl">@color/colorBlue</item>
+
+    <item name="colorSearchLocalViewBackground">@color/colorPrimaryDark</item>
+    <item name="colorSearchLocalViewControl">@color/colorBlue</item>
+
+    <item name="colorPlaceholderBackground">@color/colorPrimaryDark</item>
+    <item name="colorPlaceholderStroke">@color/colorAccent</item>
+    <item name="colorPlaceholderIcon">@color/colorAccent</item>
+
+    <item name="colorSeparator">#DCE1E6</item>
+    <item name="colorCardBackground">@color/colorPrimaryDark</item>
+    <item name="colorBadgeBackground">@color/colorPrimaryDark</item>
+    <item name="colorWidgetStatusBackground">@color/colorBlackTranslucentLight</item>
+  </style>
+
+  <!-- Progress Bar -->
+
+  <style name="ProgressBar.Dark" parent="ProgressBar">
+    <item name="android:indeterminateTint">@color/colorAccent</item>
+  </style>
+
+  <!-- Dialogs -->
+
+  <style name="AlertDialog" parent="@style/Theme.Material3.DayNight.Dialog">
+    <item name="android:textColor">@color/colorBlue</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="colorPrimary">@color/colorAccent</item>
+    <item name="android:textColorSecondary">@color/colorBlueLight</item>
+    <item name="textColorAlertDialogListItem">@color/colorBlue</item>
+    <item name="android:textColorPrimary">@color/colorBlue</item>
+    <item name="buttonBarPositiveButtonStyle">@style/AlertDialog.PositiveButton</item>
+    <item name="buttonBarNegativeButtonStyle">@style/AlertDialog.NegativeButton</item>
+  </style>
+
+  <style name="AlertDialog.PositiveButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+    <item name="android:textColor">@color/colorAccent</item>
+    <item name="cornerRadius">100dp</item>
+  </style>
+
+  <style name="AlertDialog.NegativeButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+    <item name="android:textColor">@color/colorGrayLight</item>
+    <item name="cornerRadius">100dp</item>
+  </style>
+
+  <style name="ShowlySwitch.Overlay" parent="">
+    <item name="colorPrimary">@color/colorAccent</item>
+    <item name="colorPrimaryContainer">#4D4B6383</item>
+  </style>
+
+  <style name="ImageTitleGrid" parent="ImageTitle">
+    <item name="android:shadowColor">@color/colorTransparent</item>
+    <item name="android:textColor">?attr/textColorGridTitle</item>
+    <item name="fontFamily">sans-serif-medium</item>
+  </style>
+
+</resources>

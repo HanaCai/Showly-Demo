@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="menuMyMovies">Omat elokuvat</string>
+  <string name="menuWatchlistMovies">Katselulista</string>
+  <string name="menuHidden">Piilotetut</string>
+  <string name="textMyMoviesEmpty">Elokuvakoelmasi on tyhjä.\n\nSiirry <b>etsintään</b> lisätäksesi ensimmäisen elokuvasi.</string>
+  <string name="textWatchlistMoviesEmpty"><b>Katselulistasi</b> on tyhjä.\n\nSiirry <b>etsintään</b> lisätäksesi elokuvia, joita haluat katsella tulevaisuudessa.</string>
+  <string name="textHiddenEmpty"><b>Piilotetut</b>-listasi on tyhjä.\n\n<b>Piilotetut</b> on lista kohteista, joista et ole kiinnostunut.\n\nPiilotettuja kohteita ei enää näytetä mm. <b>Katselutilanne</b>- ja <b>Etsi</b>-osioissa.</string>
+</resources>
